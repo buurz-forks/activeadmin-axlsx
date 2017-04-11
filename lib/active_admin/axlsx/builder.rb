@@ -186,7 +186,7 @@ module ActiveAdmin
       def header_data_for(collection)
         resource = collection.first
         columns.map do |column|
-          column.localized_name(i18n_scope) if in_scope(resource, column)
+          column.localized_name(i18n_scope)
         end.compact
       end
 
@@ -202,7 +202,7 @@ module ActiveAdmin
 
       def resource_data(resource)
         columns.map  do |column|
-          call_method_or_proc_on resource, column.data if in_scope(resource, column)
+          call_method_or_proc_on resource, column.data
         end
       end
 
